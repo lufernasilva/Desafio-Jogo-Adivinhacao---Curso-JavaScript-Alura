@@ -1,0 +1,130 @@
+/* Aplica a todos os elementos */
+* {
+    box-sizing: border-box; /* Inclui padding e border no cálculo do tamanho total do elemento */
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove padding padrão */
+    color: white; /* Define a cor do texto como branco */
+}
+
+/* Estiliza o corpo da página */
+body {
+    background: linear-gradient(#1354A5 0%, #041832 33.33%, #041832 66.67%, #01080E 100%); /* Define um fundo gradiente */
+    height: 100vh; /* Define a altura como 100% da altura da janela de visualização */
+    display: flex; /* Usa flexbox para alinhar os itens */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    justify-content: center; /* Alinha os itens horizontalmente ao centro */
+}
+
+/* Adiciona um pseudo-elemento antes do corpo */
+body::before {
+    background-image: url("img/code.png"); /* Define uma imagem de fundo */
+    background-repeat: no-repeat; /* Evita a repetição da imagem */
+    background-position: right; /* Posiciona a imagem à direita */
+    content: ""; /* Necessário para criar o pseudo-elemento */
+    display: block; /* Exibe o pseudo-elemento como um bloco */
+    position: absolute; /* Posiciona o pseudo-elemento de forma absoluta */
+    width: 100%; /* Define a largura como 100% */
+    height: 100%; /* Define a altura como 100% */
+    opacity: 0.4; /* Define a opacidade da imagem */
+}
+
+/* Estiliza o contêiner principal */
+.container {
+    width: 1200px; /* Define a largura do contêiner */
+    height: 600px; /* Define a altura do contêiner */
+    display: flex; /* Usa flexbox para alinhar os itens */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    justify-content: space-between; /* Distribui os itens com espaço entre eles */
+    border-radius: 24px; /* Define bordas arredondadas */
+    border: 1px solid #1875E8; /* Define uma borda sólida */
+    box-shadow: 4px 4px 20px 0px rgba(1, 8, 14, 0.15); /* Adiciona uma sombra ao contêiner */
+    background-image: url("img/Ruido.png"); /* Define uma imagem de fundo */
+    background-size: 100% 100%; /* Ajusta a imagem de fundo para cobrir todo o contêiner */
+    position: relative; /* Define a posição relativa */
+}
+
+/* Estiliza o conteúdo do contêiner */
+.container__conteudo {
+    display: flex; /* Usa flexbox para alinhar os itens */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    position: absolute; /* Posiciona de forma absoluta */
+    bottom: 0; /* Alinha ao fundo do contêiner */
+}
+
+/* Estiliza a seção de informações do contêiner */
+.container__informacoes {
+    flex: 1; /* Permite que o elemento cresça para preencher o espaço disponível */
+    padding: 20px; /* Adiciona padding ao redor do conteúdo */
+}
+
+/* Estiliza o botão dentro do contêiner */
+.container__botao {
+    border-radius: 16px; /* Define bordas arredondadas */
+    background: #1875E8; /* Define a cor de fundo */
+    padding: 16px 24px; /* Adiciona padding ao botão */
+    width: 50%; /* Define a largura como 100% */
+    font-size: 24px; /* Define o tamanho da fonte */
+    font-weight: 700; /* Define a espessura da fonte */
+    border: none; /* Remove a borda padrão */
+    margin-top: 16px; /* Adiciona margem superior */
+    cursor: pointer;
+}
+
+/* Estiliza o título principal */
+h1 {
+    font-family: 'Chakra Petch', sans-serif; /* Define a fonte */
+    font-size: 40px; /* Define o tamanho da fonte */
+}
+
+/* Estiliza o texto dentro do contêiner jogo */
+.container__jogo {
+    margin: 16px 0 16px 0; /* Adiciona margem superior e inferior */
+    background: rgba(0, 0, 0, 0.6);
+    background-size: 100% 100%;
+    border-radius: 1rem;
+    display: flex; /* Usa flexbox para alinhar os itens */
+    flex-direction: column; /* Alinha os itens em coluna */
+    align-items: center; /* Alinha os itens horizontalmente ao centro */
+    justify-content: center; /* Alinha os itens verticalmente ao centro */
+    height: 100%; /* Define a altura como 100% do contêiner pai */
+    text-align: center; /* Centraliza o texto */
+    padding: 20px; /* Adiciona padding ao redor do conteúdo */
+}
+
+
+/* Estiliza o texto azul dentro do contêiner */
+.container__jogo-azul {
+    color: #1875E8; /* Define a cor do texto */
+    font-size: 30px; /* Define o tamanho da fonte */
+}
+
+
+/* Estiliza os subtítulos, parágrafos e botões */
+h2,
+p,
+button {
+    font-family: 'Inter', sans-serif; /* Define a fonte */
+}
+
+/* Estiliza os subtítulos */
+h2 {
+    font-size: 22px; /* Define o tamanho da fonte */
+    font-weight: 400; /* Define a espessura da fonte */
+    padding: 20px; /* Adiciona padding ao redor do conteúdo */
+    font-size: 16px; /* Define o tamanho da fonte */
+}
+
+input {
+    padding: 16px 24px; /* Adiciona padding ao botão */
+    width: 50%; /* Define a largura como 100% */
+    font-size: 20px; /* Define o tamanho da fonte */
+    font-weight: 300; /* Define a espessura da fonte */
+    border: none; /* Remove a borda padrão */
+    margin-top: 16px; /* Adiciona margem superior */
+    color: #060606; /* cor texto */
+    text-align: center; /* Centraliza o texto dentro do input */
+}
+
+.container__botao:hover { 
+    background-color: #67a3de; 
+}

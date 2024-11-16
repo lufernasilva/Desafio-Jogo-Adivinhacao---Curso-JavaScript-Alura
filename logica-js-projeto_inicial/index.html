@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>JS Game</title>
+</head>
+
+<body onload="gerarNumeroSecreto()">
+    <div class="container">
+        <div class="container__conteudo">
+            <img src="./img/robot.png" alt="robô mergulhador" class="container__imagem-robo" />
+            <div class="container__informacoes">
+                <img src="./img/trophy.png" alt="ícone de um troféu" />
+                <h1>Vamos jogar?</h1>
+                 <div class="container__jogo">
+                    <h1><span class="container__jogo-azul">Adivinhe um número entre 1 a 100</span></h1>
+                    <input 
+                        id="inputNumero"
+                        name="inputNumero"
+                        type="number" 
+                        step="1"
+                        min="1"
+                        max="100"
+                        placeholder="Digite um número"
+                        onblur="validarNumeroDigitado(this.value)"
+                    />
+                    <button id="btnChute" class="container__botao" onclick="jogar()">Enviar</button>
+                    <h2 id="aviso"></h2>
+                    <h2 id="tentativas"></h2>
+                    <h2 id="tentativasRestantes"></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js" defer></script>
+</body>
+
+</html>
