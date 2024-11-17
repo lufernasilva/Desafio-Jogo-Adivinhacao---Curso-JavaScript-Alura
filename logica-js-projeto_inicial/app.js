@@ -16,7 +16,7 @@ let tentativasRestantes = document.querySelector('#tentativasRestantes')
 
 function gerarNumeroSecreto() {
     numeroSecreto = parseInt(Math.random() * max + 1);    
-    console.log(numeroSecreto);
+    // console.log(numeroSecreto);
 }
 
 function reiniciar(){
