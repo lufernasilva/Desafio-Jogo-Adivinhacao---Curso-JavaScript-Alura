@@ -98,6 +98,13 @@ h1 {
     font-size: 30px; /* Define o tamanho da fonte */
 }
 
+/* Estiliza o texto da mensagem */
+.container__mensagem {
+    font-size: 20px; /* Define o tamanho da fonte */
+    font-weight: bold; /* Define a fonte como negrito */
+    padding: 16px; /* Adiciona padding ao redor do conteúdo */
+}
+
 
 /* Estiliza os subtítulos, parágrafos e botões */
 h2,
@@ -108,9 +115,8 @@ button {
 
 /* Estiliza os subtítulos */
 h2 {
-    font-size: 22px; /* Define o tamanho da fonte */
     font-weight: 400; /* Define a espessura da fonte */
-    padding: 20px; /* Adiciona padding ao redor do conteúdo */
+    padding: 10px; /* Adiciona padding ao redor do conteúdo */
     font-size: 16px; /* Define o tamanho da fonte */
 }
 
