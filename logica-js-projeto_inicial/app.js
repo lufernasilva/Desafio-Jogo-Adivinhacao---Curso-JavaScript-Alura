@@ -25,6 +25,7 @@ function reiniciar(){
     btnChute.onclick = jogar;
     inputNumero.value = '';
     aviso.textContent = '';
+    aviso.style.color = 'white';
     tentativas.textContent = '';
     tentativasRestantes.textContent = '';
     contador = 0;
@@ -40,8 +41,9 @@ function validarNumeroDigitado(numero) {
     }
 }
 
-function mensagemRapida(mensagem){
-    aviso.textContent = mensagem
+function mensagemRapida(mensagem, cor){
+    aviso.textContent = mensagem;
+    aviso.style.color = cor;
 }
 
 function qtdTentativa(qtd){
@@ -61,48 +63,46 @@ function jogar(){
 }
 
 function gameOver(situacao) {
-    chute = parseInt(document.querySelector('#inputNumero').value)
+    let chute = parseInt(document.querySelector('#inputNumero').value);
     switch(situacao) {
-        case 'Acertou' :
-            mensagemRapida('Parabéns!!! Acertou, o número secreto é ' + numeroSecreto)
-        break
+        case 'Acertou':
+            mensagemRapida('Parabéns!!! Acertou, o número secreto é ' + numeroSecreto, 'green');
+            break;
 
-        case 'Chute maior' :
-            mensagemRapida('Errouu... O número secreto é menor que ' + chute)
-        break
+        case 'Chute maior':
+            mensagemRapida('Errouu... O número secreto é menor que ' + chute, 'white');
+            break;
 
-        case 'Chute menor' :
-            mensagemRapida('Errouu... O número secreto é maior que ' + chute)
-        break
-        
-        case 'Game Over' :
-            mensagemRapida('Game Over')
-        break 
+        case 'Chute menor':
+            mensagemRapida('Errouu... O número secreto é maior que ' + chute), 'white';
+            break;
 
+        case 'Game Over':
+            mensagemRapida('Game Over', 'red');
+            break;
     }
 }
 
-function verificarSeAcertou(){
-    chute = parseInt(document.querySelector('#inputNumero').value)
+function verificarSeAcertou() {
+    let chute = parseInt(document.querySelector('#inputNumero').value);
+    let situacao;
 
-    if(chute !== numeroSecreto && maxTentativa === 1){
-        situacao = 'Game Over'
-        gameOver(situacao)
-        btnChute.textContent = 'Reiniciar'
-        btnChute.onclick = reiniciar
-    } else if(numeroSecreto === chute) {
-        situacao = 'Acertou'
-        gameOver(situacao)
-        btnChute.textContent = 'Reiniciar'
-        btnChute.onclick = reiniciar
-        
+    if (maxTentativa === 1) {
+        situacao = 'Game Over';
+    } else if (numeroSecreto === chute) {
+        situacao = 'Acertou';
     } else if (chute > numeroSecreto) {
-        situacao = 'Chute maior'
-        gameOver(situacao)
+        situacao = 'Chute maior';
     } else if (chute < numeroSecreto) {
-        situacao = 'Chute menor'
-        gameOver(situacao)
+        situacao = 'Chute menor';
     } else {
-        mensagemRapida('Não foi possível verificar')
+        mensagemRapida('Não foi possível verificar');
+        return; // Adiciona um retorno para evitar múltiplas chamadas de gameOver
+    }
+
+    gameOver(situacao);
+    if (situacao === 'Acertou' || situacao === 'Game Over') {
+        btnChute.textContent = 'Reiniciar';
+        btnChute.onclick = reiniciar;
     }
 }
